@@ -33,8 +33,10 @@ public class TargetedAd {
 
 
     /* your code here */
+    DataCollector datass = new DataCollector();
     
-     
+
+    
   }
 
 }

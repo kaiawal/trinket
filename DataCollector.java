@@ -20,6 +20,7 @@ public class DataCollector
   private Scanner sc;
   private int currentPost;
   private int currentTargetWord;
+  private String usernames;
 
   public DataCollector()
   {
@@ -27,6 +28,21 @@ public class DataCollector
     targetWords = new ArrayList<String>();
     currentPost = 0;
     currentTargetWord = 0;
+  }
+
+  public void findUsernames() {
+    boolean x = true;
+    while(x) {
+      String post = getNextPost();
+      String targetWord = "";
+      while (!targetWord.equals("NONE")) {
+        targetWord = getNextTargetWord();
+        if (post.indexOf(targetWord) != -1) {
+          usernames = post.substring(0, post.indexOf(" ") + 1);
+          targetWord = "NONE";
+        }
+      }
+    }
   }
 
   /**
