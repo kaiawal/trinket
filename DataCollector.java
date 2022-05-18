@@ -64,7 +64,7 @@ public class DataCollector
     } catch (Exception e) { System.out.println("Error reading or parsing" + targetWords + "\n" + e); }
   }
 
-  /**
+  /**sss
    * Get the next post in socialMediaPosts with words separated by a single space, 
    * or "NONE" if there is no more data.
    * 
