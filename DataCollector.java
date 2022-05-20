@@ -15,7 +15,7 @@ import java.io.*;
  * A DataCollector class to manage social media posts
  */
 public class DataCollector {
-  private ArrayList<String> socialMediaPosts;
+  private ArrayList<String> socialMediaPostsSmall;
   private ArrayList<String> targetWords;
   private Scanner sc;
   private int currentPost;
@@ -23,7 +23,7 @@ public class DataCollector {
   private String usernames;
 
   public DataCollector() {
-    socialMediaPosts = new ArrayList<String>();
+    socialMediaPostsSmall = new ArrayList<String>();
     targetWords = new ArrayList<String>();
     currentPost = 0;
     currentTargetWord = 0;
@@ -69,10 +69,10 @@ public class DataCollector {
         // String method trim removes whitespace before and after a string
         String temp = sc.nextLine().trim();
         // DEBUG: System.out.println(temp);
-        this.socialMediaPosts.add(temp);
+        this.socialMediaPostsSmall.add(temp);
       }
     } catch (Exception e) {
-      System.out.println("Error reading or parsing" + socialMediaPosts + "\n" + e);
+      System.out.println("Error reading or parsing" + socialMediaPostsSmall + "\n" + e);
     }
 
     // read in the target words in targetWords
@@ -94,9 +94,9 @@ public class DataCollector {
    * @return a string containing one of the lines in socialMediaPosts
    */
   public String getNextPost() {
-    if (currentPost < socialMediaPosts.size()) {
+    if (currentPost < socialMediaPostsSmall.size()) {
       this.currentPost++;
-      return socialMediaPosts.get(currentPost - 1);
+      return socialMediaPostsSmall.get(currentPost - 1);
     } else {
       return "NONE";
     }
@@ -143,7 +143,7 @@ public class DataCollector {
    * Print the array of posts
    */
   public void printAllPosts() {
-    for (String post : this.socialMediaPosts)
+    for (String post : this.socialMediaPostsSmall)
       System.out.println(post);
   }
 
