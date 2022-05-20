@@ -20,7 +20,7 @@ public class DataCollector {
   private Scanner sc;
   private int currentPost;
   private int currentTargetWord;
-  private String usernames;
+  private String usernames = "";
 
   public DataCollector() {
     socialMediaPostsSmall = new ArrayList<String>();
@@ -31,17 +31,22 @@ public class DataCollector {
 
   public String findUsernames() {
     String post = getNextPost();
-    String targetWord = "";
+    String targetWord = "aaaaaaaaaaaaaaa";
+    // System.out.print(post);
     boolean x = true;
     while (x) {
+      // System.out.println(targetWord + post);
       while (!targetWord.equals("NONE")) {
         targetWord = getNextTargetWord();
+        // System.out.println("inside " + targetWord);
         if (post.indexOf(targetWord) != -1) {
-          usernames = post.substring(0, post.indexOf(" ") + 1);
+          // System.out.print(targetWord);
+          usernames = usernames + " " + post.substring(0, post.indexOf(" "));
           targetWord = "NONE";
         }
       }
       post = getNextPost();
+      targetWord = getNextTargetWord();
       if (post.equals("NONE")) {
         x = false;
       }

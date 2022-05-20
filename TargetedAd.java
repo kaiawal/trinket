@@ -6,7 +6,7 @@ public class TargetedAd {
   public static void main(String[] args)
   {
     /*  
-     * TODO:
+     * TOD
      * PREPARATION WORK
      * (1) Create a file called targetWords.txt. Populate this file with words on each line that
      *     you think would determine if a user is a dog or cat owner.
@@ -34,9 +34,9 @@ public class TargetedAd {
 
     /* your code here */
     DataCollector datass = new DataCollector();
+    datass.setData("socialMediaPostsSmall.txt", "targetWords.txt");
     String x = datass.findUsernames();
-    datass.printAllPosts();
-    datass.printAllTargetWords();
+    System.out.print(x);
 
 
     
