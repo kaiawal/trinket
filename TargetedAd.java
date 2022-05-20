@@ -34,7 +34,8 @@ public class TargetedAd {
 
     /* your code here */
     DataCollector datass = new DataCollector();
-    
+    String x = datass.findUsernames();
+    System.out.print(x);
 
     
   }
