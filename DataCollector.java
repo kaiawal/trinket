@@ -29,24 +29,32 @@ public class DataCollector {
     currentTargetWord = 0;
   }
 
+  /**
+   * Creates a String with a space in between each username containing
+   * each username that said a target word in their post.
+   */
   public String findUsernames() {
     String post = getNextPost();
-    String targetWord = "aaaaaaaaaaaaaaa";
-    // System.out.print(post);
+    String postunc = post.toLowerCase();
+    String targetWord = " ";
     boolean x = true;
+    // runs through all of the posts, stopping when returned "NONE"
     while (x) {
-      // System.out.println(targetWord + post);
+      // runs through all target words for every post
       while (!targetWord.equals("NONE")) {
         targetWord = getNextTargetWord();
-        // System.out.println("inside " + targetWord);
-        if (post.indexOf(targetWord) != -1) {
-          // System.out.print(targetWord);
-          usernames = usernames + " " + post.substring(0, post.indexOf(" "));
+        if (postunc.indexOf(targetWord) != -1) {
+          // adds username to the String if it has a keyword and adds a space
+          usernames = usernames + post.substring(0, post.indexOf(" ") + 1);
+          // resets the while loop
           targetWord = "NONE";
         }
       }
       post = getNextPost();
+      // covers if the post has an upercase letter in the targetWord
+      postunc = post.toLowerCase();
       targetWord = getNextTargetWord();
+      // once all the posts are done iterating through, breaks the while loop
       if (post.equals("NONE")) {
         x = false;
       }

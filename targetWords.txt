@@ -1,20 +1,21 @@
-fur
-cats
-hairy
-dogs
-fetch
-ball
-canine
-doggy
-hound
-pooch
-meow
-bark
-paw
-litter
-stroke
-hiss
-tail
-kitten
-dog
-cat
+ fur 
+ cats 
+ hairy 
+ dogs 
+ fetch 
+ canine
+ doggy
+ hound
+ pooch
+ meow
+ bark
+ paw
+ litter
+ hiss
+ tail
+ kitten
+ dog 
+cat 
+doggie
+puppy
+pup
